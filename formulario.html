@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Banco de Preguntas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registro de Banco de Preguntas</h1>
+    
+    <form id="bancoPreguntas">
+        <div class="form-group">
+            <label for="titulo">Título del Banco:</label>
+            <input type="text" id="titulo" name="titulo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" name="categoria" required>
+                <option value="">Selecciona una categoría</option>
+                <option value="matematicas">Matemáticas</option>
+                <option value="ciencias">Ciencias</option>
+                <option value="historia">Historia</option>
+                <option value="literatura">Literatura</option>
+                <option value="tecnologia">Tecnología</option>
+                <option value="otros">Otros</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="nivel">Nivel de Dificultad:</label>
+            <select id="nivel" name="nivel" required>
+                <option value="">Selecciona el nivel</option>
+                <option value="basico">Básico</option>
+                <option value="intermedio">Intermedio</option>
+                <option value="avanzado">Avanzado</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="pregunta">Pregunta:</label>
+            <textarea id="pregunta" name="pregunta" placeholder="Escribe la pregunta aquí..." required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="opcionA">Opción A:</label>
+            <input type="text" id="opcionA" name="opcionA" required>
+        </div>
+
+        <div class="form-group">
+            <label for="opcionB">Opción B:</label>
+            <input type="text" id="opcionB" name="opcionB" required>
+        </div>
+
+        <div class="form-group">
+            <label for="opcionC">Opción C:</label>
+            <input type="text" id="opcionC" name="opcionC" required>
+        </div>
+
+        <div class="form-group">
+            <label for="opcionD">Opción D:</label>
+            <input type="text" id="opcionD" name="opcionD" required>
+        </div>
+
+        <div class="form-group">
+            <label for="respuestaCorrecta">Respuesta Correcta:</label>
+            <select id="respuestaCorrecta" name="respuestaCorrecta" required>
+                <option value="">Selecciona la respuesta correcta</option>
+                <option value="A">Opción A</option>
+                <option value="B">Opción B</option>
+                <option value="C">Opción C</option>
+                <option value="D">Opción D</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="explicacion">Explicación (opcional):</label>
+            <textarea id="explicacion" name="explicacion" placeholder="Explica por qué es la respuesta correcta..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="tiempo">Tiempo estimado (minutos):</label>
+            <input type="number" id="tiempo" name="tiempo" min="1" max="60">
+        </div>
+
+        <div class="form-group">
+            <label for="tags">Etiquetas (separadas por comas):</label>
+            <input type="text" id="tags" name="tags" placeholder="ej: álgebra, ecuaciones, básico">
+        </div>
+
+        <button type="submit" class="btn">Registrar Pregunta</button>
+        <button type="reset" class="btn" style="background-color: #6c757d;">Limpiar Formulario</button>
+    </form>
+
+    <script>
+        document.getElementById('bancoPreguntas').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Pregunta registrada exitosamente');
+        });
+    </script>
+</body>
+</html>
